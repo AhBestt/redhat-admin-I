@@ -144,7 +144,55 @@ You can create multiple file names that point to the same file. These file names
   -> You can create soft link by `ln` command with option `-s` <br>
   -> Can link 2 files on different file systems (hard link can't) <br>
   -> Can point to a directory or special file not just to a regular file like hard link <br>
-  
+
+Open file for editing by using the `vi` command <br>
+```
+vi filename
+```
+___
+
+## Managing Local Users and Groups
+User Types in Linux Systems <br>
+1. Superuser: <br>
+   The superuser name is `root` UID is 0. The superuser has full systemc access
+2. System user: <br>
+   Users do not interactively login with a system user account, only used by processes that provide supporting services.
+3. Regular user: <br>
+  For their day-to-day work. Have limited access to the system. <br>
+  use `id` command to show information about the currently logged-in user. <br>
+
+To view process information use `ps` command. By default only display processes that are running with the same UID as the current user. <br>
+
+By default, systems use the `/etc/passwd` file to store information about local users. <br>
+By default, systems use the `/etc/group` file to store information about local groups. <br>
+
+To switch user accounts run `su` command: <br>
+example switch from user1 to user2 <br>
+```
+su - user2
+```
+example switch to root <br>
+```
+su -
+```
+
+To configuring sudo <br>
+`/etc/sudoers` file is the main configuration file for the `sudo` command <br>
+example from `/etc/sudoers` file enables sudo access for `wheel` group members: <br>
+```
+%wheel  ALL=(ALL:ALL)  ALL
+```
+- %wheel is the user or group. `%` before the `wheel` word specifies a group. <br>
+
+You can also setup `sudo` to allow a user to run command as another user without entering their password, by using the `NOPASSWD: ALL` command: <br>
+```
+test  ALL=(ALL) NOPASSWD: ALL
+```
+
+Creating Users <br>
+```
+useradd <username>
+```
 
 
 
