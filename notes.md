@@ -79,3 +79,12 @@ The root directory `/` is at the top of the file-system hierarchy <br>
 |:-----|:-----|
 |/boot    | To start the boot process |
 |/dev| Special devie files the system uses to access hardware|
+|/etc| System specific configuration files.|
+|/home| Home directory, users store their data and configuration files |
+|/root| Home directory for administrative superuser, root|
+|/run | Runtime data for processses that started since the last boot|
+|/tmp| Space for temporary file. Files that are not accessed, changed or modified for 10 days are deleted|
+|/usr| Installed software, shared libraries, etc.
+||/usr/bin: user commands|
+||/usr/sbin: System administration commands|
+||/usr/local: Locally customized software|
