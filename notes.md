@@ -204,3 +204,38 @@ to remove the user's home directory use `-r` option
 |:----|
 |When you remove a user without `-r` option an unassigend UID now owns the user's files. If you create a user and that user is assigned the deleted user's UID, then the new account owns those files|
 
+To Setting passwords <br>
+`passwd <username>`
+
+To Creating group <br>
+`groupadd` -g option to specifies a GID for the group to use.
+```
+groupadd -g 10000 group01
+```
+
+To deleting group <br>
+use `groupdel` command <br>
+```
+groupdel <groupname>
+```
+
+To changing Group Membership from the Command Line <br>
+use the `usermod -g` command to change a user's default primary group <br>
+```
+usermode -g <groupname> <username>
+```
+
+To configuring Password Aging <br>
+use `change` command <br>
+example
+```
+change -m 0 -M 90 -W 7 -I 14 sysadmin
+```
+- -m = minimum age ( 0 day)
+- -M = maximum age (90 days)
+- -W = warning period (7 days)
+- -I = inactivity period (14 days)
+- sysadmin = username
+
+You also can change the default password aging configuration in the `/etc/login.defs` file. <br>
+`Pass_MAX_DAYS`, `PASS_MIN_DAYS`, `PASS_WARN_AGE` sets the default maximum, minimum and warning period of password. <br>
