@@ -133,5 +133,18 @@ rmdir <directory_name>
 ```
 - `rmdir` command to remove directories, `-r` option to remove non-empty directories. <br>
 
+You can create multiple file names that point to the same file. These file names are called *links* <br>
+- hard link
+  -> when you create hard link to a file, you create another name that points to the same data. <br>
+  -> Even if the original file is deleted, you can still access the contents of the file provided that at least one other hard link exists. <br> 
+  -> You can use `ln` command to create hard link <br>
+  ```
+  ln newfile.txt /tmp/newfile-hardlink.txt
+- soft link <br>
+  -> You can create soft link by `ln` command with option `-s` <br>
+  -> Can link 2 files on different file systems (hard link can't) <br>
+  -> Can point to a directory or special file not just to a regular file like hard link <br>
+  
+
 
 
