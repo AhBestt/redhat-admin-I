@@ -44,3 +44,29 @@ Add file names to the `cat` commands to display multiple files <br>
 ```
 cat file1 file2
 ```
+
+To display the beginning or the end of file use `head` and `tail` commands <br>
+By default these commands display 10 lines of the file. <br>
+```
+head /etc/passwd
+tail /etc/passwd
+```
+To specify a different number of lines use -n option <br>
+```
+tail -n 3 /etc/passwd
+```
+To create users on the system use `useradd`command <br>
+
+To display the command history use `history` <br>
+and use `!number` to run command in the history <br>
+```
+history
+...output omitted...
+29 ls /etc
+30 history
+
+!29
+...output omitted...
+ls /etc
+...output omitted...
+```
