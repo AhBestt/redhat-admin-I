@@ -194,5 +194,13 @@ Creating Users <br>
 useradd <username>
 ```
 
-
+Deleting Users <br>
+```
+userdel <username>
+```
+`userdel` command removes the username from `/etc/passwd` file, but leaves the user's home directory <br>
+to remove the user's home directory use `-r` option
+|Warning|
+|:----|
+|When you remove a user without `-r` option an unassigend UID now owns the user's files. If you create a user and that user is assigned the deleted user's UID, then the new account owns those files|
 
