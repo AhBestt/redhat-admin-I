@@ -88,3 +88,50 @@ The root directory `/` is at the top of the file-system hierarchy <br>
 ||/usr/bin: user commands|
 ||/usr/sbin: System administration commands|
 ||/usr/local: Locally customized software|
+|/var| System specific variable data should persist between boot|
+
+___
+## Navigating Paths in the File System
+To displays the full path name of the current working use `pwd` command <br>
+To lists directory contents use `ls` command <br>
+with option `-l` (long listing format),`-a` (all files, including hidden files) <br>
+to change shell's current working directory use `cd` command <br>
+```
+cd /home/user/Documents
+cd Videos
+cd
+```
+Create empty files by `touch` command <br>
+```
+touch Docemets/test1.txt
+```
+___
+
+## Manage Files with command line
+To create one or more directories. use the `mkdir` command <br>
+```
+mkdir ProjectA ProjectB ProjectC
+```
+-  If the directory exists, or a parent directory doesn't exist then the command failed <br>
+- `-p` (parent) option creates any missing parent directories for the requested destination <br>
+```
+mkdir -p Test/chapter1 Test/chapter2 Test/chapter3
+```
+To copy file to a directory use `cp` command <br>
+```
+cp test1.txt test2.txt
+```
+To move files and directories from one location to another use `mv` command <br>
+and also can rename by the same command <br>
+```
+mv test1.txt test3.txt
+```
+To remove files and directories use `rm` command
+```
+rm test2.txt
+rmdir <directory_name>
+```
+- `rmdir` command to remove directories, `-r` option to remove non-empty directories. <br>
+
+
+
