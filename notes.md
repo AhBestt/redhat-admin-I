@@ -70,3 +70,12 @@ history
 ls /etc
 ...output omitted...
 ```
+
+___
+
+## Linux File-system Hierarchy
+The root directory `/` is at the top of the file-system hierarchy <br>
+| Location | Purpose |
+|:-----|:-----|
+|/boot    | To start the boot process |
+|/dev| Special devie files the system uses to access hardware|
