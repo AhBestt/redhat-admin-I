@@ -264,3 +264,58 @@ The next 9 characters represent the file permissions. These characters are inter
 |`r` (read)| File contents can be read|
 |`w` (write) | File contents can be changed|
 |`x` (execute) | File can be executed as commands|
+
+To change file and directory permissions use `chmod` command <br>
+```
+chmod Who/What/Which file|directory
+```
+
+Who is the class of user <br>
+|Who|User class|
+|:---|:---|
+|`u`| user|
+|`g`|group|
+|`o`|other|
+|`a`|all|
+
+What is the operator that modifies permissions <br>
+|What|Operation|
+|:---|:---|
+|`+`|add|
+|`-`|remove|
+|`=`|set exactly|
+
+Which is the mode and specifies which permissions to set for the files or directories <br>
+|Which|Mode|
+|:---|:---|
+|`r`|read|
+|`w`|write|
+|`x`|execute|
+|`X`|special execute|
+
+example command <br>
+```
+chmod go-rw document.pdf
+chmod a+x script.sh
+chmod -R g+rwx /home/user/folder
+```
+`-R` option to recursively set permissions on the files in an entire directory tree <br>
+
+You can also change permission with the octal method <br>
+```
+chmod #### file|directory
+```
+
+
+start with 0 <br>
+to add read add 4 <br>
+add write add 2 <br>
+add execute add 1 <br>
+
+example <br>
+```
+chmod 644 files.txt
+chmod 750 sample.txt
+```
+
+Change file and directory user or group ownership
