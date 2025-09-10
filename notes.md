@@ -239,3 +239,28 @@ change -m 0 -M 90 -W 7 -I 14 sysadmin
 
 You also can change the default password aging configuration in the `/etc/login.defs` file. <br>
 `Pass_MAX_DAYS`, `PASS_MIN_DAYS`, `PASS_WARN_AGE` sets the default maximum, minimum and warning period of password. <br>
+
+
+___
+## Controlling Access to Files
+
+example when run command `ls` <br>
+drwxr-xr-x <br>
+first character: <br>
+- `-` is a regular file.
+- `d` is a directory.
+- `l` is a symbolic link.
+- `c` is a character device file.
+- `b` is a block device file.
+- `p` is a named pipe file.
+- `s` is a local socket file.
+The next 9 characters represent the file permissions. These characters are interpreted as 3 sets of 3 characters: <br>
+- First set are permissions that apply to the file owner.
+- Second set are for the file's group owner.
+- The last set applies to all other (world) users.
+
+|Permission|Effect on files|
+|:----|:----|
+|`r` (read)| File contents can be read|
+|`w` (write) | File contents can be changed|
+|`x` (execute) | File can be executed as commands|
