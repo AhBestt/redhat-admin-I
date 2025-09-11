@@ -318,4 +318,63 @@ chmod 644 files.txt
 chmod 750 sample.txt
 ```
 
-Change file and directory user or group ownership
+Change file and directory user or group ownership <br>
+Only `root` user can change the user that owns a file. <br>
+```
+chown student test.conf
+chown -R student Document
+chown :admins Document
+chown student:admins Document
+```
+`-R` option to recursively changes the ownership of an entire directory tree. <br>
+`:` change both owner and group at the same time by using the `owner:group` syntax <br>
+
+
+___
+## Investigate RPM Software Packages
+example `.rpm` coreutils-9.5-6.el10.x86_64.rpm <br>
+- Name : coreutils -> 1 or more words to describe the contents
+- Version : 9.5 -> is the version number of the original software
+- Release : 6.el10 -> release number of the package based on that version
+- Arch : x86_64 -> Processor architecture
+
+To Inspecting RPM Packages <br>
+Retrive general imformation about installed packages: <br>
+`rpm -qa` -> List all installed packages <br>
+`rpm -q <package>` -> List the currently installed package version <br>
+
+To Installing rpm packages <br>
+use the `rpm` command <br>
+```
+rpm -ivk <file.rpm>
+```
+
+To finding software with DNF <br>
+use `dnf list` command <br>
+example: <br>
+```
+dnf list http*
+```
+
+To installing, updating and removing software with dnf <br>
+use `dnf install <Packagename>` command <br>
+```
+sudo dnf install httpd
+sudo dnf update httpd
+sudo dnf remove httpd
+```
+
+To Manage software repositories <br>
+to list all available repositories and their status run `dnf repolist all` <br>
+
+Configuraing DNF Repositories <br>
+manully configure a dnf repository by create `.repo` file in the `/etc/yum.repos.d` directory <br>
+example `.repo` file : <br>
+```
+[RHEL]
+name= RHEL10
+baseurl=https://abc/def
+enabled=1
+gpgcheck=0
+```
+If you use the gpgkey parameter to reference a local key you can also add into the file .rpm <br>
